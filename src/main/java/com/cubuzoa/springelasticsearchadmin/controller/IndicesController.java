@@ -1,4 +1,4 @@
-package com.cubuzoa.springelasticsearchadmin;
+package com.cubuzoa.springelasticsearchadmin.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

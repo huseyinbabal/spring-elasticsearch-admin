@@ -1,34 +1,34 @@
 'use strict';
 
-var SpringElasticsearchMontior = {};
+var SpringElasticsearchAdmin = {};
 
-var App = angular.module('SpringElasticsearchMontior', []);
+var App = angular.module('SpringElasticsearchAdmin', ['ngRoute']);
 
 App.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/', {
-        templateUrl: 'main/layout',
-        controller: CarController
+    $routeProvider.when('/dashboard', {
+        templateUrl: 'dashboard/layout',
+        controller: DashboardController
     });
 
     $routeProvider.when('/indices', {
         templateUrl: 'indices/layout',
-        controller: CarController
+        controller: IndicesController
     });
 
     $routeProvider.when('/query', {
         templateUrl: 'query/layout',
-        controller: TrainController
+        controller: QueryController
     });
 
     $routeProvider.when('/mappings', {
         templateUrl: 'mappings/layout',
-        controller: RailwayStationController
+        controller: MappingsController
     });
 
     $routeProvider.when('/rest', {
         templateUrl: 'rest/layout',
-        controller: RailwayStationController
+        controller: RestController
     });
 
-    $routeProvider.otherwise({redirectTo: '/'});
+    $routeProvider.otherwise({redirectTo: '/dashboard'});
 }]);

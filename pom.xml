@@ -2,14 +2,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.springapp</groupId>
-    <artifactId>spring-elasticsearch-HQ</artifactId>
+    <artifactId>spring-elasticsearch-admin</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>spring-elasticsearch-HQ</name>
+    <name>spring-elasticsearch-admin</name>
 
     <properties>
         <spring.version>3.2.0.RELEASE</spring.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>sonatype</id>
+            <name>Sonatype Groups</name>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -61,10 +69,16 @@
             <version>4.8.2</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>io.searchbox</groupId>
+            <artifactId>jest</artifactId>
+            <version>0.0.5</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>spring-elasticsearch-HQ</finalName>
+        <finalName>spring-elasticsearch-admin</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
