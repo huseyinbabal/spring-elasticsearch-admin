@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@RequestMapping("/indices")
 public class IndicesController {
-	@RequestMapping(method = RequestMethod.GET, value = {"/indices"})
-	public String indices(ModelMap model) {
-		model.addAttribute("message", "Hello world!");
-		return "indices/layout";
-	}
+
+    @RequestMapping("/layout")
+    public String getIndicesPartialPage(ModelMap modelMap) {
+        return "indices/layout";
+    }
 }

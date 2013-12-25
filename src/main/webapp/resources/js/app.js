@@ -1,10 +1,9 @@
-'use strict';
+var SpringElasticsearchAdmin = angular.module('SpringElasticsearchAdmin', [
+    'ngRoute',
+    'AppDirectives.directives'
+]);
 
-var SpringElasticsearchAdmin = {};
-
-var App = angular.module('SpringElasticsearchAdmin', ['ngRoute']);
-
-App.config(['$routeProvider', function ($routeProvider) {
+SpringElasticsearchAdmin.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/dashboard', {
         templateUrl: 'dashboard/layout',
         controller: DashboardController

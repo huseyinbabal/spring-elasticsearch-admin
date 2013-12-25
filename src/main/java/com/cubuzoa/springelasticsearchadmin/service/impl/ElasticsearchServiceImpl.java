@@ -23,10 +23,10 @@ import java.io.UnsupportedEncodingException;
 @Component
 public class ElasticsearchServiceImpl implements ElasticsearchService {
 
-    @Value("${elasticsearch['host']}")
+    @Value("${elasticsearch.host}")
     private String host;
 
-    @Value("${elasticsearch['port']}")
+    @Value("${elasticsearch.port}")
     private String port;
 
     private String index;
