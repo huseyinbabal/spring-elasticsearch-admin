@@ -5,13 +5,18 @@ var AppDirectives = angular.module('AppDirectives.directives', []);
 AppDirectives.directive('ngJsonCount', function () {
     return {
         restrict: 'E',
-        template: '{{count}}',
+        template: "{{count}}",
         scope: {
-            jsonObject:'@json'
+            jsonObject:'@'
         },
         link: function (scope, elem, attrs) {
-            console.log(attrs);
-            //scope.count = Object.keys(attrs.json).length;
+            //
+            attrs.$observe('jsonObject', function(value){
+                if (value.length > 0) {
+                    var json = JSON.parse(value);
+                    scope.count = (Object.keys(json).length);
+                }
+            });
         }
     }
 });

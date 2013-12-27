@@ -9,6 +9,7 @@ import io.searchbox.client.config.ClientConfig;
 import io.searchbox.client.http.JestHttpClient;
 import io.searchbox.cluster.Health;
 import io.searchbox.cluster.State;
+import io.searchbox.indices.Stats;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.springframework.beans.factory.annotation.Value;
@@ -77,7 +78,7 @@ public class ElasticsearchServiceImpl implements ElasticsearchService {
         if (client == null) {
             buildJestClient();
         }
-        JestResult result = client.execute(new State.Builder().build());
+        JestResult result = client.execute(new Stats.Builder().build());
         return result;
     }
 
